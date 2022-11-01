@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+        xmlns:core="sap.ui.core"
+        xmlns:l="sap.ui.layout"
+        xmlns:form="sap.ui.layout.form"
+        xmlns="sap.m">
+    <Dialog id="deleteCategoryDialog" title="{i18n>LABEL_DELETE_CATEGORY}" titleAlignment="Center" contentWidth="60rem" resizable="true" type="Message">
+        <content>
+
+            <l:BlockLayout>
+                <l:BlockLayoutRow>
+                    <l:BlockLayoutCell>
+                        <form:SimpleForm editable="true" backgroundDesign="Transparent" layout="ResponsiveGridLayout">
+                            <Label vAlign="Top" text="{i18n>LABEL_NAME}"/>
+                            <Input id="categoryDeleteName"/>
+                        </form:SimpleForm>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+            </l:BlockLayout>
+
+        </content>
+        <beginButton>
+            <Button text="{i18n>LABEL_DELETE_CATEGORY}" type="Accept" press=".onDeleteCategorySave"/>
+        </beginButton>
+        <endButton>
+            <Button text="{i18n>LABEL_CANCEL}" type="Reject" press=".onDeleteCategoryCancel"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

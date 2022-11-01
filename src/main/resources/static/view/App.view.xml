@@ -1,0 +1,38 @@
+<mvc:View
+		controllerName="todor.catalog.controller.App"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns:tnt="sap.tnt"
+		height="100%">
+
+	<tnt:ToolPage id="dashboard">
+		<tnt:mainContents>
+		<OverflowToolbar>
+			<dependents>
+				<core:Fragment fragmentName="todor.catalog.fragment.AddCategoryDialog" type="XML"/>
+				<core:Fragment fragmentName="todor.catalog.fragment.DeleteCategoryDialog" type="XML"/>
+			</dependents>
+			<Button
+					text="{i18n>LABEL_TOGGLE}"
+					icon="sap-icon://collapse"
+					press=".onCollapseExpandPress" />
+			<Button
+					text="{i18n>LABEL_ADD_CATEGORY}"
+					icon="sap-icon://add"
+					press=".onAddNewCategory" />
+			<Button
+					text="{i18n>LABEL_DELETE_CATEGORY}"
+					icon="sap-icon://delete"
+					press=".onDeleteCategory" />
+		</OverflowToolbar>
+		<tnt:NavigationList id="navigationList" items="{path: '/categories'}">
+			<tnt:NavigationListItem text="{name}" icon="sap-icon://{icon}" expanded="true" items="{path: 'items', templateShareable:false}">
+				<tnt:NavigationListItem text="{name}">
+				</tnt:NavigationListItem>
+			</tnt:NavigationListItem>
+		</tnt:NavigationList>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+
+</mvc:View>

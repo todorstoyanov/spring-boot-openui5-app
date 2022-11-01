@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+        xmlns:core="sap.ui.core"
+        xmlns:l="sap.ui.layout"
+        xmlns:form="sap.ui.layout.form"
+        xmlns="sap.m">
+    <Dialog id="addCategoryDialog" title="{i18n>LABEL_ADD_CATEGORY}" titleAlignment="Center" contentWidth="60rem" resizable="true" type="Message">
+        <content>
+
+            <l:BlockLayout>
+                <l:BlockLayoutRow>
+                    <l:BlockLayoutCell>
+                        <form:SimpleForm editable="true" backgroundDesign="Transparent" layout="ResponsiveGridLayout">
+                            <Label vAlign="Top" text="{i18n>LABEL_NAME}"/>
+                            <Input id="categoryAddName" />
+                            <Label vAlign="Top" text="{i18n>LABEL_ICON}"/>
+                            <Input id="categoryAddIcon"/>
+                            <Link text="{i18n>LABEL_ICON_EXPLORER}" target="_blank" href="https://openui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html" />
+                            <Label vAlign="Top" text="{i18n>LABEL_ITEMS}"/>
+                            <Input id="categoryAddItems" placeholder="Enter comma separated values"/>
+                        </form:SimpleForm>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+            </l:BlockLayout>
+
+        </content>
+        <beginButton>
+            <Button text="{i18n>LABEL_SAVE}" type="Accept" press=".onAddCategorySave"/>
+        </beginButton>
+        <endButton>
+            <Button text="{i18n>LABEL_CANCEL}" type="Reject" press=".onAddCategoryCancel"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
